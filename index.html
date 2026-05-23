@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>GFOTY Simulator - Restored</title>
+    <meta name="theme-color" content="#321326">
+    <link rel="icon" href="assets/AppIcon60x60@3x.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="stage" aria-label="GFOTY Simulator play area">
+        <img class="logo" src="assets/textlogo.png" alt="GFOTY Simulator">
+
+        <div class="hud" aria-label="Score and sound">
+          <div class="score">
+            <img src="assets/10-points.png" alt="">
+            <span id="score" aria-live="polite">0</span>
+          </div>
+          <button class="sound" id="sound" type="button" aria-label="Mute music">MUSIC ON</button>
+        </div>
+
+        <button class="avatar" id="avatar" type="button" aria-label="Tap GFOTY">
+          <img id="avatar-image" src="assets/av1.png" alt="GFOTY avatar">
+        </button>
+
+        <nav class="actions" aria-label="Actions">
+          <button class="action" data-action="vomit" type="button">
+            <img src="assets/01.png" alt="">
+            <span>VOMIT</span>
+          </button>
+          <button class="action" data-action="destroy" type="button">
+            <img src="assets/02.png" alt="">
+            <span>DESTROY</span>
+          </button>
+          <button class="action" data-action="food" type="button">
+            <img src="assets/03.png" alt="">
+            <span>FEED</span>
+          </button>
+        </nav>
+
+        <div class="sequence" id="sequence" hidden>
+          <video id="sequence-video" playsinline preload="auto"></video>
+          <button class="skip" id="skip" type="button">SKIP</button>
+        </div>
+
+        <div class="reward" id="reward" aria-hidden="true">
+          <img src="assets/10-points.png" alt="">
+          <span>+10</span>
+        </div>
+
+        <section class="destroy-modal" id="destroy-modal" role="dialog" aria-modal="true" aria-labelledby="destroy-title" hidden>
+          <img class="tape" src="assets/warningtape.png" alt="">
+          <div class="warning-card">
+            <img class="triangle" src="assets/wtriangle.png" alt="">
+            <img class="destroy-title" id="destroy-title" src="assets/dtext.png" alt="Destroy GFOTY?">
+            <div class="confirm-actions">
+              <button class="confirm yes" id="destroy-yes" type="button">YES</button>
+              <button class="confirm no" id="destroy-no" type="button">NO</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="intro" id="intro">
+          <img src="assets/textlogo.png" alt="GFOTY Simulator">
+          <button id="start" type="button">TAP TO BEGIN</button>
+          <p>Restored from the original 2016 app assets</p>
+        </section>
+      </section>
+    </main>
+
+    <audio id="bgm" src="assets/bgm.m4a" preload="auto" loop></audio>
+    <audio id="fx" preload="auto"></audio>
+    <script src="game.js"></script>
+  </body>
+</html>
